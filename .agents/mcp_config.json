@@ -7,6 +7,11 @@
     "playwright": {
       "command": "cmd",
       "args": ["/c", "npx", "-y", "@playwright/mcp@latest"]
+    },
+    "memory": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-memory"],
+      "env": { "MEMORY_FILE_PATH": "C:/Users/gabri/practica1-mcp/salida/memoria.jsonl" }
     }
   }
 }

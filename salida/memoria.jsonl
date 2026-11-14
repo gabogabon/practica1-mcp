@@ -1,0 +1,17 @@
+{"type":"entity","name":"Practica1","entityType":"Grupo","observations":[]}
+{"type":"entity","name":"Carla Mendez","entityType":"Alumno","observations":["promedio final: 9.50","aprueba: si"]}
+{"type":"entity","name":"Gabriela Luna","entityType":"Alumno","observations":["promedio final: 9.50","aprueba: si"]}
+{"type":"entity","name":"Ana Torres","entityType":"Alumno","observations":["promedio final: 9.00","aprueba: si"]}
+{"type":"entity","name":"Elena Castro","entityType":"Alumno","observations":["promedio final: 8.17","aprueba: si"]}
+{"type":"entity","name":"Fabian Ortiz","entityType":"Alumno","observations":["promedio final: 6.83","aprueba: si"]}
+{"type":"entity","name":"Bruno Salas","entityType":"Alumno","observations":["promedio final: 6.17","aprueba: si"]}
+{"type":"entity","name":"Diego Ruiz","entityType":"Alumno","observations":["promedio final: 5.50","aprueba: no"]}
+{"type":"entity","name":"Hector Vega","entityType":"Alumno","observations":["promedio final: 5.33","aprueba: no"]}
+{"type":"relation","from":"Carla Mendez","to":"Practica1","relationType":"pertenece_a"}
+{"type":"relation","from":"Gabriela Luna","to":"Practica1","relationType":"pertenece_a"}
+{"type":"relation","from":"Ana Torres","to":"Practica1","relationType":"pertenece_a"}
+{"type":"relation","from":"Elena Castro","to":"Practica1","relationType":"pertenece_a"}
+{"type":"relation","from":"Fabian Ortiz","to":"Practica1","relationType":"pertenece_a"}
+{"type":"relation","from":"Bruno Salas","to":"Practica1","relationType":"pertenece_a"}
+{"type":"relation","from":"Diego Ruiz","to":"Practica1","relationType":"pertenece_a"}
+{"type":"relation","from":"Hector Vega","to":"Practica1","relationType":"pertenece_a"}

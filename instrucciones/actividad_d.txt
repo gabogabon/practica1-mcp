@@ -1,0 +1,14 @@
+SESION 1
+Usa unicamente las herramientas del servidor MCP memory.
+Crea una entidad de tipo Alumno por cada fila, con observaciones
+"promedio final: X" y "aprueba: si/no", y una entidad Grupo
+"Practica1" con una relacion "pertenece_a" desde cada alumno.
+Datos (promedio, aprueba): Carla Mendez 9.50 si; Gabriela Luna 9.50 si;
+Ana Torres 9.00 si; Elena Castro 8.17 si; Fabian Ortiz 6.83 si;
+Bruno Salas 6.17 si; Diego Ruiz 5.50 no; Hector Vega 5.33 no.
+Al terminar, llama a read_graph y resume lo que guardaste.
+
+SESION 2 (conversacion nueva)
+Usa unicamente las herramientas del servidor MCP memory. Sin que yo
+te de los datos de nuevo, dime que alumnos no aprobaron y quien tiene
+el promedio mas alto. Indica que herramienta usaste para consultarlo.
