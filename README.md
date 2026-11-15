@@ -6,7 +6,7 @@ Ingeniería en Sistemas Computacionales · Model Context Protocol (MCP)
 
 Esta práctica conecta **servidores MCP locales** a un agente de programación y resuelve con ellos tareas reales, comprobando qué herramienta se usó en cada paso y qué límites impone cada servidor.
 
-- **Agente usado:** Google Antigravity (aplicación de escritorio), versión **v2.31.2** según la página de descarga (`TODO: confirmar en Settings o Acerca de`), con el modelo **Gemini 3.8 Flash**. No se usó Claude Code: se instaló, pero pide una suscripción o crédito de API que no tenía, y la guía permite Antigravity como alternativa equivalente.
+- **Agente usado:** Google Antigravity (aplicación de escritorio), versión **v2.31.1** según la página de descarga, con el modelo **Gemini 3.8 Flash**. No se usó Claude Code: se instaló, pero pide una suscripción o crédito de API que no tenía, y la guía permite Antigravity como alternativa equivalente.
 - **Sistema operativo:** Windows 11, con terminal **Git Bash**.
 - **Servidores MCP:** `filesystem` y `playwright` (obligatorios) y `memory` (Actividad D).
 - **Modo de trabajo:** el agente pidió mi aprobación antes de cada llamada a una herramienta (*Allow using this MCP tool?*) y la aprobé una por una con *Yes, allow this time*.
@@ -41,7 +41,7 @@ practica1-mcp/
 | Node.js (incluye `npx`) | v26.13.1 (npm 11.20.0). Se requiere 18 o superior |
 | Git | 2.55.0 (Windows) |
 | Google Chrome | Lo usa el servidor `playwright` |
-| Google Antigravity | v2.31.2, con cuenta personal de Google (`TODO: confirmar versión`) |
+| Google Antigravity | v2.31.1, con cuenta personal de Google  |
 | Cuenta de GitHub | Para publicar el repositorio |
 
 Los servidores se ejecutan con `npx -y`, así que no hay que instalarlos de antemano. La primera ejecución tarda más porque descarga el paquete.
@@ -183,6 +183,8 @@ En Windows, la ruta aparece con barras invertidas dobles (`C:\\Users\\...`) porq
 
 > El orden se reconstruyó a partir de las capturas, tomadas en el orden en que aparecieron en pantalla.
 
+> **Nota sobre las capturas de esta actividad:** la tabla se transcribió de las capturas que tomé durante la ejecución, pero **olvidé guardar** las imágenes de los argumentos y resultados de las llamadas (y la del resumen final del agente). En la sección «Capturas» solo se incluyen las que sí conservé: algunas solicitudes de aprobación de las herramientas.
+
 #### Observaciones
 
 - **Llamadas adicionales.** El agente hizo por su cuenta llamadas que la instrucción no pedía: `list_allowed_directories` al inicio (comprobar qué carpetas puede ver el servidor), y listados de la raíz del proyecto, `instrucciones` y `salida`, además de leer `instrucciones/actividad_a.txt`. Todas son de `filesystem` y de solo lectura, salvo la escritura final, que fue la pedida.
@@ -221,47 +223,20 @@ En Windows, la ruta aparece con barras invertidas dobles (`C:\\Users\\...`) porq
 **Aprobación de la primera herramienta (`list_allowed_directories`):**
 ![Aprobación list_allowed_directories](evidencias/02_actividad_a_aprobacion.png)
 
-**Solicitud de aprobación de `list_directory`:**
-![Aprobación list_directory](evidencias/02_actividad_a_1.png)
-
-**`read_text_file` sobre `calificaciones.csv` (argumentos):**
-![read_text_file argumentos](evidencias/03_actividad_a_csv_args.png)
-
 **Aprobación de `read_text_file`:**
 ![Aprobación read_text_file](evidencias/04_actividad_a_2.png)
-
-**`read_text_file` con su resultado (contenido del CSV):**
-![read_text_file resultado](evidencias/04b_actividad_a_csv_resultado.png)
 
 **Aprobación de `list_directory`:**
 ![Aprobación list_directory](evidencias/05_actividad_a_3.png)
 
-**`list_directory` de la raíz del proyecto, con resultado:**
-![list_directory raíz](evidencias/05b_actividad_a_raiz.png)
-
-**`list_directory` de `instrucciones`:**
-![list_directory instrucciones](evidencias/05c_actividad_a_instrucciones.png)
-
 **Aprobación de `list_directory`:**
 ![Aprobación list_directory](evidencias/06_actividad_a_4.png)
-
-**`read_text_file` sobre `actividad_a.txt`:**
-![read_text_file actividad_a](evidencias/06b_actividad_a_lee_instruccion.png)
 
 **Aprobación de `read_text_file`:**
 ![Aprobación read_text_file](evidencias/07_actividad_a_5.png)
 
-**`list_directory` de `salida`:**
-![list_directory salida](evidencias/07b_actividad_a_salida.png)
-
 **Aprobación de `write_file`:**
 ![Aprobación write_file](evidencias/08_actividad_a_6.png)
-
-**`write_file` (argumentos con el contenido del reporte):**
-![write_file argumentos](evidencias/08b_actividad_a_write_args.png)
-
-**Resumen final del agente:**
-![Resumen final](evidencias/09_actividad_a_resumen.png)
 
 ### Actividad B: de una página web a un CSV
 
@@ -681,6 +656,7 @@ Al conectar el servidor, `filesystem` apareció en rojo con el error `Cannot acc
 7. **El agente hizo llamadas que no se le pidieron** (por ejemplo `list_allowed_directories`, listados de carpetas y lectura de las instrucciones). Todas eran de los servidores indicados y se aprobaron una por una; se documentan en cada actividad.
 8. **La captura de pantalla de la Actividad B no apareció en `salida/`.** En la secuencia original, `browser_take_screenshot` recibió `salida/captura.png` como nombre de archivo y la herramienta no devolvió error visible en mis capturas, pero el archivo no estaba en la carpeta del proyecto: lo busqué en el proyecto, en la carpeta de `playwright` y en mi carpeta de usuario sin encontrarlo. No determiné la causa. Lo resolví repitiendo la captura en una consulta aparte, indicando la ruta de destino, y esta vez el archivo quedó en `salida/captura.png`. **No tomé capturas de pantalla de esa segunda consulta**, así que no queda registro de su instrucción ni de sus aprobaciones; solo existe el archivo resultante.
 9. **Avisos de Git** sobre el cambio de saltos de línea (LF por CRLF) en Windows, sin efecto en la práctica. La rama inicial se llamaba `master` y se renombró a `main` al publicar.
+10. **Capturas de la Actividad A sin guardar.** Durante la Actividad A no guardé varias capturas (los argumentos y resultados de algunas llamadas, el contenido de `reporte.md` en pantalla y el resumen final del agente). La tabla de herramientas de esa actividad se basa en ellas, pero las imágenes no están en `evidencias/`; el resultado se puede comprobar en `salida/reporte.md`, y de la evidencia solo conservo algunas solicitudes de aprobación.
 
 **Qué verifiqué para estar seguro del resultado:**
 
