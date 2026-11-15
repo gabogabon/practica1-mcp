@@ -6,7 +6,7 @@ Ingeniería en Sistemas Computacionales · Model Context Protocol (MCP)
 
 Esta práctica conecta **servidores MCP locales** a un agente de programación y resuelve con ellos tareas reales, comprobando qué herramienta se usó en cada paso y qué límites impone cada servidor.
 
-- **Agente usado:** Google Antigravity (aplicación de escritorio), versión **v2.31.1** según la página de descarga, con el modelo **Gemini 3.8 Flash**. No se usó Claude Code: se instaló, pero pide una suscripción o crédito de API que no tenía, y la guía permite Antigravity como alternativa equivalente.
+- **Agente usado:** Google Antigravity (aplicación de escritorio), versión **v2.31.1**, con el modelo **Gemini 3.8 Flash**. No se usó Claude Code: se instaló, pero pide una suscripción o crédito de API que no tenía, y la guía permite Antigravity como alternativa equivalente.
 - **Sistema operativo:** Windows 11, con terminal **Git Bash**.
 - **Servidores MCP:** `filesystem` y `playwright` (obligatorios) y `memory` (Actividad D).
 - **Modo de trabajo:** el agente pidió mi aprobación antes de cada llamada a una herramienta (*Allow using this MCP tool?*) y la aprobé una por una con *Yes, allow this time*.
